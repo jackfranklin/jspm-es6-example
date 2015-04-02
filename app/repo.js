@@ -1,10 +1,12 @@
 export default class Repo {
-  constructor(obj) {
-    this.name = obj.name;
-    this.url = obj.html_url;
-    this.description = obj.description;
-    this.updated_at = obj.updated_at;
-    this.stars = obj.stargazers_count;
+  constructor({
+    name, html_url, description, updated_at, stargazers_count
+  }) {
+    this.name = name;
+    this.url = html_url;
+    this.description = description;
+    this.updated_at = updated_at;
+    this.stars = stargazers_count;
   }
 }
 
