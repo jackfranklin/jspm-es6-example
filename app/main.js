@@ -1,7 +1,18 @@
 import 'fetch';
 
-import getRepos from './get-repos';
+import { reposForUser } from './api';
+import Repo from './repo';
+import Handlebars from 'handlebars';
 
-getRepos('jackfranklin').then(function(repos) {
-  console.log(repos);
+import $ from 'jquery';
+
+import template from './repo.hbs!text';
+
+reposForUser('jackfranklin').then(function(repos) {
+  var content = repos
+    .map(repo => new Repo(repo))
+    .map(Handlebars.compile(template))
+    .join('');
+
+  $('body').append(`<ul>${content}</ul>`);
 });

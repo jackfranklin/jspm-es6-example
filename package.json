@@ -11,6 +11,9 @@
   "jspm": {
     "directories": {},
     "dependencies": {
+      "handlebars": "github:components/handlebars.js@^3.0.0",
+      "jquery": "github:components/jquery@^2.1.3",
+      "text": "github:systemjs/plugin-text@^0.0.2",
       "whatwg-fetch": "npm:whatwg-fetch@^0.7.0"
     },
     "devDependencies": {
@@ -19,5 +22,7 @@
     }
   },
   "devDependencies": {
+    "html-dist": "^0.1.0",
+    "uglifyjs": "^2.4.10"
   }
 }
